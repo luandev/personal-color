@@ -61,5 +61,3 @@ Each season has a unique color palette that complements the individual's natural
 ## Contributing
 
 Contributions are welcome! Feel free to open issues or submit pull requests to help improve the application.
-  git config --global user.email "luan.citta@gmail.com"
-  git config --global user.name "luan.citta"
