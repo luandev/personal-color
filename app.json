@@ -1,7 +1,8 @@
 {
   "expo": {
-    "name": "personal-color",
-    "slug": "personal-color",
+    "name": "Personal Color Assistant",
+    "slug": "personal-color-assistant",
+    "description": "A cutting-edge personal color assistant and stylist application using OpenAI's vision capabilities",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -25,6 +26,7 @@
     },
     "plugins": [
       "expo-router",
+      "expo-image-picker",
       [
         "expo-splash-screen",
         {
