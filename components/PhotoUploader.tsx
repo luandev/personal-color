@@ -1,5 +1,6 @@
 import { useThemeColor } from '@/hooks/useThemeColor';
 import { Image } from 'expo-image';
+// eslint-disable-next-line import/no-unresolved
 import * as ImagePicker from 'expo-image-picker';
 import React from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
