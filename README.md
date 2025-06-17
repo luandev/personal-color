@@ -1,50 +1,65 @@
-# Welcome to your Expo app 👋
+# Personal Color Assistant
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A cutting-edge personal color assistant and stylist application leveraging OpenAI's vision capabilities. Upload your photos, and let it analyze and provide personalized style recommendations based on your unique color palette and style preferences.
 
-## Get started
+## Features
 
-1. Install dependencies
+- Upload photos of your veins, jewelry, and face for a comprehensive color analysis
+- Receive personalized styling advice and color recommendations
+- View your seasonal color palette with primary, neutral, and accent colors
+- Get detailed makeup and clothing recommendations based on your season
+- Browse inspiration for makeup, outfits, and accessories that complement your coloring
+
+## Getting Started
+
+1. Clone the repository
+
+2. Install dependencies
 
    ```bash
    npm install
    ```
 
-2. Start the app
+3. Set up your OpenAI API key
+   
+   Edit the `utils/openaiApi.ts` file and replace `YOUR_OPENAI_API_KEY` with your actual API key.
+   
+   **Note:** In a production environment, you should use environment variables or a secure storage solution instead.
+
+4. Start the app
 
    ```bash
    npx expo start
    ```
 
-In the output, you'll find options to open the app in a
+## Usage
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+1. Navigate to the "Analysis" tab and upload photos of your face, wrist veins, and preferred jewelry
+2. Tap "Analyze My Colors" to process your photos
+3. View your personalized color palette and recommendations in the "Profile" tab
+4. Explore style inspirations in the "Inspiration" tab
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Technology Stack
 
-## Get a fresh project
+- React Native / Expo
+- TypeScript
+- AsyncStorage for data persistence
+- Expo Router for navigation
+- OpenAI GPT-4 Vision API for photo analysis
 
-When you're ready, run:
+## Seasonal Color Theory
 
-```bash
-npm run reset-project
-```
+This app is based on the four-season color theory, which categorizes individuals into:
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- **Spring**: Warm, clear colors with golden undertones
+- **Summer**: Cool, soft colors with blue undertones
+- **Autumn**: Warm, muted colors with earthy undertones
+- **Winter**: Cool, clear colors with blue undertones
 
-## Learn more
+Each season has a unique color palette that complements the individual's natural coloring, including skin undertone, hair color, and eye color.
 
-To learn more about developing your project with Expo, look at the following resources:
+## Contributing
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+Contributions are welcome! Feel free to open issues or submit pull requests to help improve the application.
+  git config --global user.email "luan.citta@gmail.com"
+  git config --global user.name "luan.citta"
