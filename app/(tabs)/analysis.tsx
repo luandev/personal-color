@@ -1,4 +1,5 @@
 import { ColorPaletteDisplay } from '@/components/ColorPaletteDisplay';
+import { LoadingOverlay } from '@/components/LoadingOverlay';
 import { PhotoUploader } from '@/components/PhotoUploader';
 import { ThemedText } from '@/components/ThemedText';
 import { ThemedView } from '@/components/ThemedView';
@@ -74,66 +75,69 @@ export default function AnalysisScreen() {
   };
 
   return (
-    <ScrollView style={styles.container} contentContainerStyle={styles.content}>
-      <ThemedText type="title" style={styles.title}>
-        Color Analysis
-      </ThemedText>
+    <>
+      {analyzing && <LoadingOverlay message="Analyzing your colors..." />}
+      <ScrollView style={styles.container} contentContainerStyle={styles.content}>
+        <ThemedText type="title" style={styles.title}>
+          Color Analysis
+        </ThemedText>
+        
+        <ThemedText style={styles.instructions}>
+          Take or upload photos of your face, veins, and jewelry preferences to determine your personal color palette.
+        </ThemedText>
       
-      <ThemedText style={styles.instructions}>
-        Take or upload photos of your face, veins, and jewelry preferences to determine your personal color palette.
-      </ThemedText>
-      
-      <PhotoUploader
-        photoUri={profile.photos.find(p => p.type === 'face')?.uri}
-        photoType="face"
-        title="Face Photo"
-        description="Take a photo in natural light without makeup for the most accurate results."
-        onPhotoSelected={handlePhotoSelected}
-      />
-      
-      <PhotoUploader
-        photoUri={profile.photos.find(p => p.type === 'veins')?.uri}
-        photoType="veins"
-        title="Wrist Veins"
-        description="Take a photo of your inner wrist to help determine your undertone."
-        onPhotoSelected={handlePhotoSelected}
-      />
-      
-      <PhotoUploader
-        photoUri={profile.photos.find(p => p.type === 'jewelry')?.uri}
-        photoType="jewelry"
-        title="Jewelry Preference"
-        description="Take a photo of jewelry that looks best on you (gold, silver, etc)."
-        onPhotoSelected={handlePhotoSelected}
-      />
+        <PhotoUploader
+          photoUri={profile.photos.find(p => p.type === 'face')?.uri}
+          photoType="face"
+          title="Face Photo"
+          description="Take a photo in natural light without makeup for the most accurate results."
+          onPhotoSelected={handlePhotoSelected}
+        />
+        
+        <PhotoUploader
+          photoUri={profile.photos.find(p => p.type === 'veins')?.uri}
+          photoType="veins"
+          title="Wrist Veins"
+          description="Take a photo of your inner wrist to help determine your undertone."
+          onPhotoSelected={handlePhotoSelected}
+        />
+        
+        <PhotoUploader
+          photoUri={profile.photos.find(p => p.type === 'jewelry')?.uri}
+          photoType="jewelry"
+          title="Jewelry Preference"
+          description="Take a photo of jewelry that looks best on you (gold, silver, etc)."
+          onPhotoSelected={handlePhotoSelected}
+        />
 
-      {error && (
-        <ThemedView style={styles.errorContainer}>
-          <ThemedText style={styles.errorText}>{error}</ThemedText>
-        </ThemedView>
-      )}
-      
-      {profile.photos.length > 0 && (
-        <Pressable
-          style={[styles.analyzeButton, analyzing && styles.disabledButton]}
-          onPress={handleAnalyze}
-          disabled={analyzing}
-        >
-          {analyzing ? (
-            <ActivityIndicator color="#fff" size="small" />
-          ) : (
-            <ThemedText style={styles.buttonText}>Analyze My Colors</ThemedText>
-          )}
-        </Pressable>
-      )}
-      
-      {profile.season && !analyzing && (
-        <View style={styles.resultContainer}>
-          <ThemedText type="subtitle">Your Results</ThemedText>
-          <ColorPaletteDisplay season={profile.season} />
-        </View>
-      )}
-    </ScrollView>
+        {error && (
+          <ThemedView style={styles.errorContainer}>
+            <ThemedText style={styles.errorText}>{error}</ThemedText>
+          </ThemedView>
+        )}
+        
+        {profile.photos.length > 0 && (
+          <Pressable
+            style={[styles.analyzeButton, analyzing && styles.disabledButton]}
+            onPress={handleAnalyze}
+            disabled={analyzing}
+          >
+            {analyzing ? (
+              <ActivityIndicator color="#fff" size="small" />
+            ) : (
+              <ThemedText style={styles.buttonText}>Analyze My Colors</ThemedText>
+            )}
+          </Pressable>
+        )}
+        
+        {profile.season && !analyzing && (
+          <View style={styles.resultContainer}>
+            <ThemedText type="subtitle">Your Results</ThemedText>
+            <ColorPaletteDisplay season={profile.season} />
+          </View>
+        )}
+      </ScrollView>
+    </>
   );
 }
 

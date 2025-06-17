@@ -13,7 +13,7 @@ const MAPPING: Record<string, ComponentProps<typeof MaterialIcons>['name']> = {
   'chevron.right': 'chevron-right',
   'person.fill': 'person',
   'camera.fill': 'camera',
-  'sparkles': 'auto_awesome',
+  'sparkles': 'stars',
   'photo.on.rectangle': 'collections',
   'paintpalette.fill': 'palette',
   'wand.and.stars': 'style',
