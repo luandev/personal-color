@@ -1,8 +1,10 @@
-import { ColorPaletteDisplay } from '@/components/ColorPaletteDisplay';
-import { LoadingOverlay } from '@/components/LoadingOverlay';
-import { PhotoUploader } from '@/components/PhotoUploader';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+import {
+  ColorPaletteDisplay,
+  LoadingOverlay,
+  PhotoUploader,
+  ThemedText,
+  ThemedView,
+} from '@/design-system';
 import { ColorSeason } from '@/constants/ColorPalettes';
 import { useColorProfile } from '@/context/ColorProfileContext';
 import * as Haptics from 'expo-haptics';

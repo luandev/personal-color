@@ -1,0 +1,52 @@
+name: Production Deploy
+
+on:
+  push:
+    branches: [ main ]
+    tags:
+      - 'v*'
+
+jobs:
+  deploy:
+    if: startsWith(github.ref, 'refs/tags/v')
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+      
+      # - name: Install dependencies
+      #   run: npm ci
+      
+      # - name: Install EAS CLI
+      #   run: npm install -g eas-cli
+      
+      # - name: Setup Expo
+      #   uses: expo/expo-github-action@v8
+      #   with:
+      #     eas-version: latest
+      #     token: ${{ secrets.EXPO_TOKEN }}
+      
+      # # Build for production
+      # - name: Build production apps
+      #   run: eas build --platform all --profile production --non-interactive --no-wait
+      #   env:
+      #     EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+          
+      # # Submit to stores (uncomment when ready for store submission)
+      # # - name: Submit to stores
+      # #   run: eas submit --platform all --non-interactive
+      # #   env:
+      # #     EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+      
+      # # Update production channel
+      # - name: Update production channel
+      #   run: eas update --channel production --message "Update $(git describe --tags)"
+      #   env:
+      #     EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}

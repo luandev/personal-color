@@ -39,7 +39,7 @@ export class ErrorBoundary extends Component<Props, State> {
         <ThemedView style={styles.container}>
           <ThemedText type="title" style={styles.title}>Something went wrong</ThemedText>
           <ThemedText style={styles.message}>
-            We're sorry, but there was an error loading this screen.
+            We&apos;re sorry, but there was an error loading this screen.
           </ThemedText>
           <ThemedText style={styles.errorDetails}>
             {this.state.error?.toString()}

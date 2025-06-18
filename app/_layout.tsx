@@ -4,7 +4,7 @@ import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import 'react-native-reanimated';
 
-import { ErrorBoundary } from '@/components/ErrorBoundary';
+import { ErrorBoundary } from '@/design-system';
 import { ColorProfileProvider } from '@/context/ColorProfileContext';
 import { useColorScheme } from '@/hooks/useColorScheme';
 
