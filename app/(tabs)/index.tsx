@@ -4,12 +4,14 @@ import { router } from 'expo-router';
 import React from 'react';
 import { Pressable, StyleSheet, View } from 'react-native';
 
-import { ColorPaletteDisplay } from '@/components/ColorPaletteDisplay';
-import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { StylingTips } from '@/components/StylingTips';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { IconSymbol } from '@/components/ui/IconSymbol';
+import {
+  ColorPaletteDisplay,
+  ParallaxScrollView,
+  StylingTips,
+  ThemedText,
+  ThemedView,
+  IconSymbol,
+} from '@/design-system';
 import { useColorProfile } from '@/context/ColorProfileContext';
 
 export default function ProfileScreen() {

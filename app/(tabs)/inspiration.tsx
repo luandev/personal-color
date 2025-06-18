@@ -1,8 +1,10 @@
-import { ColorPaletteDisplay } from '@/components/ColorPaletteDisplay';
-import { InspirationCard } from '@/components/InspirationCard';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
-import { IconSymbol } from '@/components/ui/IconSymbol';
+import {
+  ColorPaletteDisplay,
+  InspirationCard,
+  ThemedText,
+  ThemedView,
+  IconSymbol,
+} from '@/design-system';
 import { useColorProfile } from '@/context/ColorProfileContext';
 import { Image } from 'expo-image';
 import React, { useState } from 'react';
