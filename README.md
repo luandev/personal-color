@@ -58,6 +58,22 @@ This app is based on the four-season color theory, which categorizes individuals
 
 Each season has a unique color palette that complements the individual's natural coloring, including skin undertone, hair color, and eye color.
 
+## CI/CD Workflows
+
+This project includes several GitHub Actions workflows for continuous integration and deployment:
+
+- **Test**: Runs linting and type checking on each push and pull request
+- **Build**: Creates web and preview builds of the application
+- **Production Deploy**: Builds and deploys the app when a version tag is pushed
+- **Dependency Updates**: Checks for outdated dependencies weekly
+- **Cache Cleanup**: Periodically cleans up GitHub Actions cache
+
+To use these workflows effectively:
+
+1. Set up an `EXPO_TOKEN` secret in your GitHub repository
+2. Configure your Expo account and EAS for builds
+3. Follow semantic versioning when tagging releases (e.g., v1.0.0)
+
 ## Contributing
 
 Contributions are welcome! Feel free to open issues or submit pull requests to help improve the application.
